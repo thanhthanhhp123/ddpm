@@ -31,6 +31,7 @@ class EMA:
 
 class SelfAttention(nn.Module):
     def __init__(self, in_channels, size):
+        super(SelfAttention, self).__init__()
         self.in_channels = in_channels
         self.size = size
         self.mha = nn.MultiheadAttention(in_channels, 4, batch_first=True)
