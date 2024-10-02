@@ -141,6 +141,8 @@ class UNet(nn.Module):
 
         self.outc = nn.Conv2d(64, c_out, kernel_size=1)
 
+        self.device = device
+
     def pos_encoding(self, t, channels):
         inv_freq = 1.0 / (
             10000
