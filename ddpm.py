@@ -98,12 +98,4 @@ def train(args):
         save_images(sampled_inputs, os.path.join("results", args.run_name, f"{epoch}.jpg"))
         torch.save(model.state_dict(), os.path.join("models", args.run_name, f"ckpt.pt"))
 
-def launch():
-    import argparse
-    parser = argparse.ArgumentParser()
-    args = parser.parse_args()
-    args.run_name = 'DDPM'
-    args.epochs = 100
-    args.batch_size = 64
-    args.input_size = 64
     
