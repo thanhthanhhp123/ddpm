@@ -26,7 +26,7 @@ train_loader = torch.utils.data.DataLoader(train_data, batch_size = 64, shuffle 
 test_data = datasets.MNIST(root = 'data', train = False, download = True, transform = transforms_)
 test_loader = torch.utils.data.DataLoader(test_data, batch_size = 64, shuffle = True)
 
-model = UNet(in_channels = 1, out_channels = 1)
+model = UNet(c_in = 1, c_out = 1)
 model = model.to(device)
 optim = torch.optim.Adam(model.parameters(), lr = 1e-4)
 mse = nn.MSELoss()
