@@ -35,7 +35,7 @@ class Diffusion:
     def noise_inputs(self, x, t):
         sqrt_alpha_hat = torch.sqrt(self.alpha_hat[t])[:, None, None, None]
         sqrt_one_minus_alpha_hat = torch.sqrt(1.0 - self.alpha_hat[t])[:, None, None, None]
-        E = torch.randn_like
+        E = torch.randn_like(x)
         return sqrt_alpha_hat * x + sqrt_one_minus_alpha_hat * E, E
 
     def sample_timesteps(self, n):
